@@ -1,0 +1,58 @@
+<html>
+<body bgcolor="pink"><br><br><br>
+<script language="javascript">
+    function validate()
+     {
+       var flag=1;
+        if(document.myform.id.value==""||
+           document.myform.title.value==""||
+           document.myform.no.value==""||
+           document.myform.cost.value==""||
+           document.myform.date.value=="")
+            {
+               flag=0;
+           }
+        var str=document.myform.no.value;
+        var x;
+             for(var i=0;i<str.length;i++)
+              {
+                 x=str.substr(i,1)
+                  if(!(x<=9))
+                    {
+                         flag=0; 
+                          break;
+                         }
+                       }
+        str=document.myform.title.value; 
+        var str1=document.myform.cost.value;		
+        if(!((str=="c"&& str1==444) || (str=="jsp" && str1==555)))
+		{
+		 flag=0;
+		 }
+
+        if(flag==1)
+                         {
+                           alert("VALID INPUT");
+                            }
+       else
+                         {
+                           alert("INVALID INPUT");
+                           document.myform.focus();
+                             }
+       }
+</script>
+<form name="myform" >
+<div align="center"><pre>
+LOGIN ID           :<input type="text" name="id"><br>
+TITLE              :<input type="text" name="title"><br>
+NO.OF BOOKS  	   :<input type="text" name="no"><br>
+COST OF BOOK	   :<input type="text"name="cost"><br>
+DATE               :<input type="text" name="date"><br></pre><br><br>
+</div>
+<br><br>
+<div align="center">
+<input type="submit" value="ok"  onClick="validate()"> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="clear">
+</form>
+</body>
+</html>
